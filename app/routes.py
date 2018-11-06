@@ -20,8 +20,6 @@ def index():
 
 		return jsonify("Successful upload")
 
-	# print("THIS IS WHAT F IS: ", f.name)
-
 	return render_template('index.html')
 
 
