@@ -3,3 +3,9 @@
 __pycache__
 resources
 notebook_dbs
+derby.log
+metastore_db
+mysql-connector-java-8.0.13.jar
+spark-warehouse
+jupyter_notebooks/.ipynb_checkpoints
+data (5).csv

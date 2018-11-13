@@ -3,7 +3,7 @@ from __future__ import print_function
 
 # bring in dependencies
 import tempfile
-from flask import Flask, request, jsonify, render_template
+from flask import Flask, request, jsonify, render_template, send_file
 import werkzeug
 
 app = Flask(__name__)
@@ -27,10 +27,15 @@ def hello(path):
         print(" ".join(["saved form name", fil.name, "submitted as", fil.filename, "to temporary file", fil.stream.name]))
 
         # test to see if file was completely streamed by reading the temp file, only do this if the file is small
-        with open(fil.stream.name, "r") as f:
-                    print(f.read())
+        # with open(fil.stream.name, "r") as f:
+        #             print(f.read())
 
     return "Successfully streamed file"
+    # return send_file(fil.stream.name,
+    #                  mimetype='text/csv',
+    #                  attachment_filename='data.csv',
+    #                  as_attachment=True)
+
   return render_template('index.html')
 
 if __name__ == "__main__":
